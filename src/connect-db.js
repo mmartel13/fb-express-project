@@ -2,15 +2,15 @@
 const { initializeApp, getApps, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
-const credentials = require('../credentials.json'); //we put ../ here bc 
+const credentials = require('../credentials.json'); 
 
-function connectDb() {//this is a function to keep the connection open between API/Database 
-    if(!getApps().length) {//this says if the connection is not already open, connect
+function connectDb() {
+    if(!getApps().length) {
         initializeApp({
-            credential: cert(credentials) //tells firebase these credentials are good approve the connection
+            credential: cert(credentials) 
           });
     }
-    return getFirestore(); //connects to the database
+    return getFirestore(); 
 }
 
-module.exports = { connectDb }//exports function above to be able to reuse it in another file
+module.exports = { connectDb }

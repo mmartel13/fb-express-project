@@ -1,6 +1,6 @@
-const { connectDb } = require("./connect-db"); //brings in the function to connect to the database
+const { connectDb } = require("./connect-db"); 
 
-const custRef = connectDb().collection("customers"); //gets the customers collection
+const custRef = connectDb().collection("customers"); 
 
 function getCustomersCol() {
     return custRef
